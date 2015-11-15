@@ -1,13 +1,12 @@
 package com.orbinista.smarthome
 
-import com.typesafe.scalalogging.LazyLogging
 import org.joda.time.DateTime
 import org.joda.time.format.{DateTimeFormatter, DateTimeFormat}
 import tabulate.{RowDecoder, CellDecoder, DecodeResult}
 import tabulate.ops._
 
 
-object Csv extends LazyLogging {
+object Csv {
 
   def timedValueIterator(rawData: java.net.URL): Iterator[TimedValue] = {
     implicit val codec = scala.io.Codec.UTF8
